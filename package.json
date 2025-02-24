@@ -11,10 +11,10 @@
   },
   "scripts": {
     "test": "npx playwright test",
-    "testFlow": "npx playwright test tests/appleStorePageTests.spec.js",
+    "allure:clean": "rd /s /q allure-results allure-report",
     "allure:generate": "npx allure generate ./allure-results --clean",
     "allure:open": "npx allure open ./allure-report",
-    "test:report": "npm run testFlow && npm run allure:generate && npm run allure:open"
+    "test:report": "npm run test && npm run allure:generate && npm run allure:open"
   },
   "devDependencies": {
     "@playwright/test": "^1.50.1",
