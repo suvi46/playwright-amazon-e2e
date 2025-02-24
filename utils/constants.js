@@ -8,7 +8,8 @@ const SEARCH_TERM_2 = "iphone 13 128 GB";
 const PRODUCT_VARIANT = "iphone 13 128GB";
 const PRODUCT_NAME = "Apple iPhone 13 (128GB)";
 const APPLE_WATCH_VARIANT = "Apple Watch SE (GPS + Cellular)";
-const MODAL_APPLE_PRODUCT_TITLE="Apple Watch SE (2nd Gen, 2023) [GPS + Cellular 40mm]";
+const MODAL_APPLE_PRODUCT_TITLE =
+  "Apple Watch SE (2nd Gen, 2023) [GPS + Cellular 40mm]";
 
 module.exports = {
   AMAZON_URL,
@@ -18,4 +19,5 @@ module.exports = {
   PRODUCT_VARIANT,
   PRODUCT_NAME,
   APPLE_WATCH_VARIANT,
+  MODAL_APPLE_PRODUCT_TITLE,
 };

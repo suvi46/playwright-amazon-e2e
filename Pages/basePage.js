@@ -11,7 +11,7 @@ class BasePage {
       await this.page.goto(url, { waitUntil: "load" });
       console.log(`Navigated to URL: ${url}`);
       // Assert that the URL is correct
-      await expect(this.page.url()).toBe(url);
+      expect(this.page.url()).toBe(url);
     } catch (error) {
       console.error(`Failed to navigate to URL: ${url}`, error);
       throw error;
@@ -25,11 +25,9 @@ class BasePage {
       await this.page.locator(selector).nth(n).click();
       console.log(`Clicked element with selector: ${selector}`);
     } catch (error) {
-      console.error(
-        `Failed to click element with selector: ${selector}`,
-        error
-      );
-      throw error;
+      console.warn(`First click attempt failed on: ${locator}. Retrying...`);
+      await this.page.waitForTimeout(500); // Wait a bit before retrying
+      await this.page.locator(selector).nth(index).click();
     }
   }
 
